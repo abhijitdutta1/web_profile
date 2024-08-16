@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="data/css/style.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="data/css/image.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="data/css/normalize.css" />
+    <link rel="icon" href="" id="dynamic-favicon">
 </head>
 <body>
 
@@ -430,6 +431,12 @@
                     e.preventDefault();
                 }
             }, false);
+
+            window.onload = function() {
+                var base64Image = getComputedStyle(document.querySelector('.image-cropper')).backgroundImage;
+                base64Image = base64Image.slice(5, -2); // Remove `url("` at the start and `")` at the end
+                document.getElementById('dynamic-favicon').href = base64Image;
+            };
 
         </script>
 </body>
