@@ -27,7 +27,7 @@ body {
     background: linear-gradient(to right, transparent, rgb(0, 153, 255));
     opacity: 0.8;
     border-radius: 0 0 0px 30px;
-    
+    z-index: 1000;
   }
   
   .topnav a {
